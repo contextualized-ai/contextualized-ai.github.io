@@ -1,0 +1,51 @@
+---
+import LanguageSelector from './shared/LanguageSelector.astro';
+
+const currentPath = Astro.url.pathname.endsWith('/')
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const navigationItems = [
+  { href: '/acerca-de/', es: 'Acerca de', en: 'About' },
+  { href: '/noticias/', es: 'Noticias', en: 'News' },
+  { href: '/publicaciones/', es: 'Publicaciones', en: 'Publications' },
+  { href: '/datasets/', es: 'Datasets', en: 'Datasets' },
+  { href: '/miembros/', es: 'Miembros', en: 'Members' },
+];
+---
+
+<header class="site-header">
+  <div class="header-top">
+    <a class="brand" href="/" aria-label="C-AI, inicio" data-aria-es="C-AI, inicio" data-aria-en="C-AI, home">
+      <span class="brand-mark">C-AI</span>
+      <span class="brand-name">Contextualized Artificial Intelligence</span>
+    </a>
+    <div class="header-actions">
+      <LanguageSelector />
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-es="Menú"
+        data-en="Menu"
+        data-close-es="Cerrar"
+        data-close-en="Close"
+      >Menú</button>
+    </div>
+  </div>
+
+  <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal" data-aria-es="Navegación principal" data-aria-en="Main navigation">
+    {navigationItems.map((item) => (
+      <a
+        href={item.href}
+        data-es={item.es}
+        data-en={item.en}
+        aria-current={currentPath === item.href ? 'page' : undefined}
+      >{item.es}</a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  import '../scripts/site-navigation';
+</script>

@@ -1,0 +1,12 @@
+---
+interface Props {
+  year: string;
+}
+
+const { year } = Astro.props;
+---
+
+<li class="timeline-item">
+  <time class="item-year" datetime={year}>{year}</time>
+  <slot />
+</li>

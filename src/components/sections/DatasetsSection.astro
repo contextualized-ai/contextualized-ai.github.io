@@ -1,0 +1,35 @@
+---
+import Section from '../Section.astro';
+import { getCollection } from 'astro:content';
+
+const datasets = await getCollection('datasets', ({ data }) => data.published);
+---
+
+<Section id="datasets" titleEs="Datasets" titleEn="Datasets">
+  {datasets.length ? (
+    <ul class="timeline-list">
+      {datasets.map((dataset) => (
+        <li class="timeline-item dataset-item">
+          <div>
+            <h3 class="publication-title" data-es={dataset.data.titleEs} data-en={dataset.data.titleEn}>{dataset.data.titleEs}</h3>
+            <p class="item-meta" data-es={dataset.data.descriptionEs} data-en={dataset.data.descriptionEn}>{dataset.data.descriptionEs}</p>
+            {dataset.data.url && (
+              <a
+                class="member-link"
+                href={dataset.data.url}
+                target="_blank"
+                rel="noreferrer"
+                data-es="Abrir dataset →"
+                data-en="Open dataset →"
+              >Abrir dataset →</a>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="empty-state" data-es="Todavía no hay datasets públicos catalogados en este sitio. Actualizaremos esta sección cuando haya recursos disponibles para compartir." data-en="There are no public datasets catalogued on this site yet. We will update this section when resources are available to share.">
+      Todavía no hay datasets públicos catalogados en este sitio. Actualizaremos esta sección cuando haya recursos disponibles para compartir.
+    </p>
+  )}
+</Section>

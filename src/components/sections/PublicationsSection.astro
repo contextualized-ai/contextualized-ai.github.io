@@ -1,0 +1,39 @@
+---
+import Section from '../Section.astro';
+import TimelineItem from '../shared/TimelineItem.astro';
+import { getCollection } from 'astro:content';
+import { parsePublications } from '../../lib/publication';
+
+const publications = (await getCollection('publications'))
+  .flatMap((entry) => parsePublications(entry.data.bibtex))
+  .sort((first, second) => Number(second.year) - Number(first.year));
+---
+
+<Section id="publicaciones" titleEs="Publicaciones" titleEn="Publications">
+  <ul class="timeline-list">
+    {publications.map((publication) => (
+      <TimelineItem year={publication.year}>
+        <div>
+          <h3 class="publication-title">{publication.title}</h3>
+          {publication.authors && <p class="item-meta">{publication.authors}</p>}
+          {publication.venue && <p class="item-meta">{publication.venue}</p>}
+          {publication.paperUrl && (
+            <a
+              class="member-link"
+              href={publication.paperUrl}
+              target="_blank"
+              rel="noreferrer"
+              data-es={publication.paperUrl.includes('arxiv.org') ? 'Ver en arXiv →' : 'Ver publicación →'}
+              data-en={publication.paperUrl.includes('arxiv.org') ? 'View on arXiv →' : 'View paper →'}
+            >{publication.paperUrl.includes('arxiv.org') ? 'Ver en arXiv →' : 'Ver publicación →'}</a>
+          )}
+        </div>
+      </TimelineItem>
+    ))}
+  </ul>
+  {publications.length === 0 && (
+    <p class="empty-state" data-es="Todavía no hay publicaciones." data-en="There are no publications yet.">
+      Todavía no hay publicaciones.
+    </p>
+  )}
+</Section>

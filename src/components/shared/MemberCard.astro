@@ -1,0 +1,31 @@
+---
+interface Props {
+  member: {
+    name: string;
+    roleEs: string;
+    roleEn: string;
+    focusEs: string;
+    focusEn: string;
+    link?: string;
+    alumni?: boolean;
+  };
+}
+
+const { member } = Astro.props;
+---
+
+<article class="member-card">
+  <h3>{member.name}</h3>
+  <p class="member-role" data-es={member.roleEs} data-en={member.roleEn}>{member.roleEs}</p>
+  <p class="member-focus" data-es={member.focusEs} data-en={member.focusEn}>{member.focusEs}</p>
+  {member.link && (
+    <a
+      class="member-link"
+      href={member.link}
+      target="_blank"
+      rel="noreferrer"
+      data-es="Ver perfil →"
+      data-en="View profile →"
+    >Ver perfil →</a>
+  )}
+</article>

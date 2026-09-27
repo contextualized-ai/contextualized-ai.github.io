@@ -1,0 +1,33 @@
+---
+import Section from '../Section.astro';
+import MemberCard from '../shared/MemberCard.astro';
+import { getCollection } from 'astro:content';
+
+const allMembers = await getCollection('members');
+const members = allMembers
+  .filter((member) => !member.data.alumni)
+  .sort((first, second) => first.data.order - second.data.order);
+const alumni = allMembers
+  .filter((member) => member.data.alumni)
+  .sort((first, second) => first.data.order - second.data.order);
+---
+
+<Section id="miembros" titleEs="Miembros" titleEn="Members">
+  <div class="team-list">
+    {members.map((member) => <MemberCard member={member.data} />)}
+  </div>
+  <section class="alumni-section" aria-labelledby="alumni-heading">
+    <h3 class="team-subheading" id="alumni-heading" data-es="Exmiembros" data-en="Former members">
+      Exmiembros
+    </h3>
+    {alumni.length ? (
+      <div class="team-list alumni-list">
+        {alumni.map((member) => <MemberCard member={member.data} />)}
+      </div>
+    ) : (
+      <p class="empty-state" data-es="Todavía no hay exmiembros publicados." data-en="There are no former members listed yet.">
+        Todavía no hay exmiembros publicados.
+      </p>
+    )}
+  </section>
+</Section>

@@ -12,13 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^6.0.6",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "astro": "^7.3.3",
-    "bibtex-parse-js": "^0.0.24",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "astro": "^7.3.3"
   },
   "allowScripts": {
     "esbuild": true

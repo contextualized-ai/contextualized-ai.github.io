@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+
+const carouselSlides = (await getCollection('slides'))
+  .sort((first, second) => first.data.order - second.data.order);
+---
+
+<section class="hero-carousel" aria-label="Galería de C-AI" data-aria-es="Galería de C-AI" data-aria-en="C-AI photo gallery">
+  <div class="carousel-images" aria-live="off">
+    {carouselSlides.map((slide, index) => (
+        <img
+          class="carousel-image"
+          data-slide={index}
+          src={slide.data.image}
+          alt={slide.data.altEs}
+          data-alt-es={slide.data.altEs}
+          data-alt-en={slide.data.altEn}
+          loading="eager"
+          fetchpriority={index === 0 ? 'high' : 'auto'}
+          width="1600"
+          height="1067"
+          aria-hidden={index === 0 ? undefined : 'true'}
+          class:list={{ 'is-active': index === 0 }}
+          hidden={index !== 0}
+        />
+    ))}
+  </div>
+</section>
+
+<script>
+  import '../scripts/carousel';
+</script>

@@ -1,0 +1,18 @@
+---
+import Section from '../Section.astro';
+import TimelineItem from '../shared/TimelineItem.astro';
+import { getCollection } from 'astro:content';
+
+const newsItems = (await getCollection('news'))
+  .sort((first, second) => Number(second.data.year) - Number(first.data.year));
+---
+
+<Section id="noticias" titleEs="Noticias" titleEn="News">
+  <ul class="timeline-list">
+    {newsItems.map((item) => (
+      <TimelineItem year={item.data.year}>
+        <span data-es={item.data.textEs} data-en={item.data.textEn}>{item.data.textEs}</span>
+      </TimelineItem>
+    ))}
+  </ul>
+</Section>

@@ -1,0 +1,40 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+
+interface Props {
+  home?: boolean;
+  footer?: boolean;
+}
+
+const { home = false, footer = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="C-AI, grupo de investigación en inteligencia artificial contextualizada de FaMAF, Universidad Nacional de Córdoba."
+    />
+    <meta name="theme-color" content="#fbfbfa" />
+    <title>C-AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class:list={{ 'home-page': home }}>
+    <SiteHeader />
+    <main class:list={{ 'home-main': home }} id={home ? 'inicio' : undefined}>
+      <slot />
+      {footer && <SiteFooter />}
+    </main>
+  </body>
+</html>

@@ -1,17 +1,15 @@
 ---
-
+import HeroCarousel from '../components/HeroCarousel.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<SiteLayout home={true} footer={false}>
+  <HeroCarousel />
+  <p
+    class="home-intro"
+    data-es="En C-AI investigamos y desarrollamos sistemas de inteligencia artificial adaptados a contextos específicos, priorizando la mitigación de sesgos, su aplicación crítica en educación y el procesamiento multimodal."
+    data-en="At C-AI, we research and develop artificial intelligence systems adapted to specific contexts, prioritizing bias mitigation, their critical application in education, and multimodal processing."
+  >
+    En C-AI investigamos y desarrollamos sistemas de inteligencia artificial adaptados a contextos específicos, priorizando la mitigación de sesgos, su aplicación crítica en educación y el procesamiento multimodal.
+  </p>
+</SiteLayout>

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "published": {
+      "type": "boolean"
+    },
+    "titleEs": {
+      "type": "string"
+    },
+    "titleEn": {
+      "type": "string"
+    },
+    "descriptionEs": {
+      "type": "string"
+    },
+    "descriptionEn": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "published",
+    "titleEs",
+    "titleEn",
+    "descriptionEs",
+    "descriptionEn"
+  ]
+}

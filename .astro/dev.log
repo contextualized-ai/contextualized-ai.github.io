@@ -1,0 +1,32 @@
+01:39:04 [vite] connected.
+01:39:04 [types] Generated 0ms
+01:39:04 [vite] connected.
+01:39:04 [content] Syncing content
+01:39:04 [content] Synced content
+01:39:04 [vite] Re-optimizing dependencies because vite config has changed
+ astro  v7.3.3 ready in 401 ms
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+01:39:04 watching for file changes...
+01:39:05 [200] / 37ms
+01:39:05 [200] / 37ms
+01:39:05 [200] / 2ms
+01:39:09 [200] / 2ms
+01:40:45 [watch] /src/styles/global.css
+01:41:49 [watch] /src/styles/global.css
+01:41:51 [200] / 12ms
+01:41:58 [200] / 14ms
+01:41:58 [200] / 14ms
+01:41:58 [200] / 5ms
+01:42:05 [200] / 6ms
+01:45:01 [watch] /src/styles/global.css
+01:48:00 [ERROR] [glob-loader] Failed to reload bias-framework.md: end of the stream or a document separator is expected
+01:48:06 [200] / 7ms
+01:48:09 [ERROR] [glob-loader] Failed to reload bias-framework.md: end of the stream or a document separator is expected
+01:48:22 [ERROR] [glob-loader] Failed to reload bias-framework.md: end of the stream or a document separator is expected
+01:49:30 [ERROR] [glob-loader] Failed to reload bias-framework.md: end of the stream or a document separator is expected
+01:50:10 [watch] /src/styles/global.css
+01:50:11 [200] / 8ms
+01:50:29 [ERROR] [glob-loader] Failed to reload bias-framework.md: end of the stream or a document separator is expected
+01:50:41 [glob-loader] Reloaded data from bias-framework.md
+01:50:41 [200] / 10ms
