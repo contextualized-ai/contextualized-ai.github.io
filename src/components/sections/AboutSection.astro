@@ -4,17 +4,20 @@ import { getCollection } from 'astro:content';
 
 const [about] = await getCollection('about');
 
-if (!about) {
-  throw new Error('Add an about entry to src/content/about before building the site.');
+if (!about || !about.body) {
+  throw new Error('Add an about entry with content to src/content/about before building the site.');
 }
+const rawContent = about.body;
+
+// Separar contenido español del inglés usando el divisor "---"
+const [esContent, enContent] = rawContent.split('---').map(text => text.trim());
+
+import { marked } from 'marked';
+const htmlEs = marked.parse(esContent);
+const htmlEn = marked.parse(enContent);
 ---
 
 <Section id="acerca-de" titleEs="Acerca de" titleEn="About">
-  <p
-    class="intro"
-    data-es={about.data.introEs}
-    data-en={about.data.introEn}
-  >
-    {about.data.introEs}
-  </p>
+  <div class="content-body" data-lang="es" set:html={htmlEs} />
+  <div class="content-body" data-lang="en" set:html={htmlEn} />
 </Section>

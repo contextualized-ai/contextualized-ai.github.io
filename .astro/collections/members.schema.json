@@ -2,44 +2,133 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "order": {
-      "type": "integer",
-      "minimum": -9007199254740991,
-      "maximum": 9007199254740991
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "name": {
+            "type": "string"
+          },
+          "roleEs": {
+            "type": "string"
+          },
+          "roleEn": {
+            "type": "string"
+          },
+          "focusEs": {
+            "type": "string"
+          },
+          "focusEn": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "order",
+          "name",
+          "roleEs",
+          "roleEn",
+          "focusEs",
+          "focusEn"
+        ]
+      }
     },
-    "name": {
-      "type": "string"
-    },
-    "roleEs": {
-      "type": "string"
-    },
-    "roleEn": {
-      "type": "string"
-    },
-    "focusEs": {
-      "type": "string"
-    },
-    "focusEn": {
-      "type": "string"
-    },
-    "link": {
-      "type": "string",
-      "format": "uri"
+    "interns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "name": {
+            "type": "string"
+          },
+          "roleEs": {
+            "type": "string"
+          },
+          "roleEn": {
+            "type": "string"
+          },
+          "focusEs": {
+            "type": "string"
+          },
+          "focusEn": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "order",
+          "name",
+          "roleEs",
+          "roleEn",
+          "focusEs",
+          "focusEn"
+        ]
+      }
     },
     "alumni": {
-      "default": false,
-      "type": "boolean"
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "name": {
+            "type": "string"
+          },
+          "roleEs": {
+            "type": "string"
+          },
+          "roleEn": {
+            "type": "string"
+          },
+          "focusEs": {
+            "type": "string"
+          },
+          "focusEn": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "order",
+          "name",
+          "roleEs",
+          "roleEn",
+          "focusEs",
+          "focusEn"
+        ]
+      }
     },
     "$schema": {
       "type": "string"
     }
   },
   "required": [
-    "order",
-    "name",
-    "roleEs",
-    "roleEn",
-    "focusEs",
-    "focusEn"
+    "members",
+    "interns",
+    "alumni"
   ]
 }

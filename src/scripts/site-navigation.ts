@@ -1,5 +1,6 @@
 const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
 const navigation = document.querySelector<HTMLElement>('#primary-navigation');
+const languagePreferenceKey = 'c-ai-language';
 
 function setMenuOpen(open: boolean) {
   if (!menuToggle || !navigation) return;
@@ -12,22 +13,7 @@ function setMenuOpen(open: boolean) {
     : menuToggle.dataset[document.documentElement.lang] ?? 'Menú';
 }
 
-menuToggle?.addEventListener('click', () => {
-  setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
-});
-
-navigation?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => setMenuOpen(false));
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') setMenuOpen(false);
-});
-
-const languageToggle = document.querySelector<HTMLButtonElement>('.locale-toggle');
-
-languageToggle?.addEventListener('click', () => {
-  const language = document.documentElement.lang === 'es' ? 'en' : 'es';
+function applyLanguage(language: 'es' | 'en') {
   const locale = language === 'es' ? 'Es' : 'En';
 
   document.documentElement.lang = language;
@@ -52,7 +38,34 @@ languageToggle?.addEventListener('click', () => {
     image.alt = image.dataset[`alt${locale}`] ?? '';
   });
 
-  languageToggle.setAttribute('aria-label', languageToggle.dataset[`label${locale}`] ?? '');
-  languageToggle.title = languageToggle.dataset[`title${locale}`] ?? '';
+  if (languageToggle) {
+    languageToggle.setAttribute('aria-label', languageToggle.dataset[`label${locale}`] ?? '');
+    languageToggle.title = languageToggle.dataset[`title${locale}`] ?? '';
+  }
   setMenuOpen(false);
+}
+
+menuToggle?.addEventListener('click', () => {
+  setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+});
+
+navigation?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => setMenuOpen(false));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenuOpen(false);
+});
+
+const languageToggle = document.querySelector<HTMLButtonElement>('.locale-toggle');
+
+const savedLanguage = window.localStorage.getItem(languagePreferenceKey);
+if (savedLanguage === 'es' || savedLanguage === 'en') {
+  applyLanguage(savedLanguage);
+}
+
+languageToggle?.addEventListener('click', () => {
+  const language = document.documentElement.lang === 'es' ? 'en' : 'es';
+  window.localStorage.setItem(languagePreferenceKey, language);
+  applyLanguage(language);
 });

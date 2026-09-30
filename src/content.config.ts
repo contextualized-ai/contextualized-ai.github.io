@@ -3,10 +3,7 @@ import { glob } from 'astro/loaders';
 
 const about = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/about' }),
-  schema: z.object({
-    introEs: z.string(),
-    introEn: z.string(),
-  }),
+  schema: z.object({}),
 });
 
 const news = defineCollection({
@@ -15,6 +12,11 @@ const news = defineCollection({
     year: z.string(),
     textEs: z.string(),
     textEn: z.string(),
+    images: z.array(z.object({
+      image: z.string().startsWith('/'),
+      altEs: z.string(),
+      altEn: z.string(),
+    })).default([]),
   }),
 });
 
@@ -37,17 +39,22 @@ const datasets = defineCollection({
   }),
 });
 
+const memberSchema = z.object({
+  order: z.number().int(),
+  name: z.string(),
+  roleEs: z.string(),
+  roleEn: z.string(),
+  focusEs: z.string(),
+  focusEn: z.string(),
+  link: z.string().url().optional(),
+});
+
 const members = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/members' }),
+  loader: glob({ pattern: 'team.md', base: './src/content/members' }),
   schema: z.object({
-    order: z.number().int(),
-    name: z.string(),
-    roleEs: z.string(),
-    roleEn: z.string(),
-    focusEs: z.string(),
-    focusEn: z.string(),
-    link: z.string().url().optional(),
-    alumni: z.boolean().default(false),
+    members: z.array(memberSchema),
+    interns: z.array(memberSchema),
+    alumni: z.array(memberSchema),
   }),
 });
 

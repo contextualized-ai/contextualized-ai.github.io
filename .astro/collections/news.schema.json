@@ -11,6 +11,31 @@
     "textEn": {
       "type": "string"
     },
+    "images": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "type": "string",
+            "format": "starts_with",
+            "pattern": "^\\/.*"
+          },
+          "altEs": {
+            "type": "string"
+          },
+          "altEn": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "image",
+          "altEs",
+          "altEn"
+        ]
+      }
+    },
     "$schema": {
       "type": "string"
     }

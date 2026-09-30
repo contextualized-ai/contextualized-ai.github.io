@@ -1,4 +1,27 @@
+En C-AI investigamos y desarrollamos sistemas de inteligencia artificial adaptados a contextos específicos, priorizando la mitigación de sesgos, su aplicación crítica en educación y el procesamiento multimodal.
+
+## Nuestras Líneas de Investigación
+
+### Alineación y robustez de modelos de inteligencia artificial
+Nos enfocamos en el diseño de técnicas de análisis de error y alineación para modelos de inteligencia artificial, situándolos cuidadosamente en sus contextos de uso y marcos culturales. Nuestro trabajo abarca la detección y caracterización participativa de diversos tipos de sesgos (emergentes, de automatización y técnicos). Además, impulsamos el desarrollo de plataformas de evaluación de código abierto e ingeniería de datos, diseñando métricas de costo de error que se adaptan a la variabilidad de los datos y las variantes lingüísticas. Complementamos esto con estrategias de autodiagnóstico y mitigación en distribuciones subrepresentadas, optimizando sistemas bajo restricciones de recursos de hardware mediante cómputo frugal y facilitando la transferencia de modelos hacia entornos profesionales de alta especificidad y soporte clínico.
+
+### Inteligencia artificial situada en espacios de aprendizaje
+Promovemos una perspectiva crítica de los sistemas algorítmicos mediante técnicas de auditoría de inteligencia artificial, identificando conceptos fundamentales que contribuyen a una alfabetización digital integral. Para ello, diseñamos, desplegamos y validamos tecnologías del lenguaje en contextos educativos, desarrollando metodologías de evaluación para medir el desempeño y las limitaciones de los modelos. Estudiamos los procesos de adquisición de lenguajes naturales y formales, prestando especial atención al fenómeno de la sicofancia en los modelos de lenguaje y sus implicancias en la construcción del conocimiento. Asimismo, investigamos cómo estos sistemas modifican las prácticas de aprendizaje y automatizan la retroalimentación formativa, modelando las dinámicas de interacción humano-IA para fomentar usos educativos más conscientes y contextualizados.
+
+### Inteligencia artificial multimodal
+Investigamos la convergencia entre los modelos de visión por computadora y el procesamiento de lenguaje natural. Desarrollamos sistemas de diálogo referencial y mecanismos de clarificación semántica en contextos visuales, procesando información textual inmersa en dichos entornos mediante muestreo espacial y geométrico. Nuestra investigación también integra contenido estructurado, como tablas y gráficos, en el procesamiento del lenguaje visual. Para asegurar la fiabilidad de estos sistemas, construimos infraestructura de software abierta orientada a la auditoría de flujos multimodales, lo que permite la detección automática de ambigüedades en el historial de interacción y el diseño de métricas de calibración estadística orientadas a la respuesta selectiva y la mitigación de errores.
+
 ---
-introEs: En C-AI investigamos y desarrollamos sistemas de inteligencia artificial adaptados a contextos específicos, priorizando la mitigación de sesgos, su aplicación crítica en educación y el procesamiento multimodal.
-introEn: At C-AI, we research and develop artificial intelligence systems adapted to specific contexts, prioritizing bias mitigation, critical applications in education, and multimodal processing.
----
+
+At C-AI, we research and develop artificial intelligence systems adapted to specific contexts, prioritizing bias mitigation, critical applications in education, and multimodal processing.
+
+## Our Research Lines
+
+### Alignment and robustness of artificial intelligence models
+We focus on designing error analysis and alignment techniques for artificial intelligence models, situating them within their specific contexts of use and cultural frameworks. Our work encompasses the participatory detection and characterization of various biases, including emergent, automation, and technical biases. Furthermore, we drive data engineering and the development of open-source evaluation platforms, designing error cost metrics tailored to data variability and linguistic variants. This is complemented by self-diagnostic and mitigation strategies for underrepresented distributions, system optimization under hardware constraints through frugal computing, and the transfer of AI models to highly specific professional and clinical environments.
+
+### Artificial intelligence situated in learning spaces
+We promote a critical perspective on algorithmic systems through advanced AI auditing techniques, identifying fundamental concepts that foster comprehensive digital literacy. To achieve this, we design, deploy, and validate language technologies in educational contexts while developing rigorous benchmarking methodologies to assess model performance and limitations. Our research delves into natural and formal language acquisition processes, with a particular focus on sycophancy in language models and its implications for knowledge construction and critical thinking. Additionally, we investigate how current systems alter relationships with knowledge, learning practices, and formative feedback automation, modeling human-AI interaction dynamics to encourage conscious, critical, and contextualized educational applications.
+
+### Multimodal artificial intelligence
+Our team explores the convergence between computer vision and natural language processing models. We develop referential dialogue systems and situated semantic clarification mechanisms for visual contexts, processing textual information embedded in these environments through spatial and geometric sampling. Our research also integrates structured content, such as tables and charts, into visual language processing. To ensure system reliability, we build open software infrastructure for auditing multimodal pipelines, enabling the automatic detection of ambiguities in interaction histories and designing statistical calibration metrics for selective answering and error mitigation.

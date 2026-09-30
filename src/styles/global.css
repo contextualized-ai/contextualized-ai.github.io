@@ -147,6 +147,24 @@ main {
   line-height: 1.35;
   letter-spacing: -0.025em;
 }
+.content-body[data-lang="en"] { display: none; }
+html[lang="en"] .content-body[data-lang="es"] { display: none; }
+html[lang="en"] .content-body[data-lang="en"] { display: block; }
+.content-body h2,
+.content-body h3 {
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.content-body h2 {
+  margin: 1.4rem 0 1rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+.content-body h3 {
+  margin: 1.3rem 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 .empty-state { max-width: 38rem; color: var(--muted); }
 
 .hero-carousel {
@@ -171,6 +189,31 @@ main {
 }
 .carousel-image[hidden] { display: none; }
 .carousel-image.is-active { animation: carousel-fade 650ms ease-out both; }
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.carousel-controls button {
+  min-width: 2rem;
+  min-height: 2rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.carousel-controls button:hover { background: var(--ink); color: #fff; }
+.news-text { margin: 0 0 1rem; }
+.news-carousel { margin-top: 1rem; }
+.news-carousel .carousel-images {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+}
 @keyframes carousel-fade {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -215,6 +258,31 @@ main {
 .item-year, .item-meta { color: var(--muted); font-size: 0.9rem; }
 .publication-title { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 400; letter-spacing: normal; }
 .item-meta { margin: 0; }
+.publication-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+.publication-filter {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+.publication-filter input, .publication-filter select {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0.45rem 0.6rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+.filter-hint { color: var(--muted); font-size: 0.8rem; }
+.publication-item.is-filtered-out { display: none; }
+.publication-empty-state { margin-top: 1rem; }
 .team-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -233,7 +301,7 @@ main {
 }
 .member-role { margin: 0 0 0.55rem; color: var(--muted); font-size: 0.82rem; }
 .member-focus { margin: 0 0 0.5rem; font-size: 0.93rem; }
-.alumni-section { margin-top: 3rem; }
+.interns-section, .alumni-section { margin-top: 3rem; }
 .team-subheading {
   margin: 0 0 1.25rem;
   font-size: 1.2rem;
@@ -337,6 +405,7 @@ main {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
+  .publication-filters { grid-template-columns: 1fr; }
   .member-card:not(:last-child)::after {
     position: absolute;
     bottom: -1.25rem;

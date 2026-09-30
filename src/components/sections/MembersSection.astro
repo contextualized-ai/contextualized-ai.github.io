@@ -1,28 +1,44 @@
 ---
 import Section from '../Section.astro';
 import MemberCard from '../shared/MemberCard.astro';
-import { getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
 
-const allMembers = await getCollection('members');
-const members = allMembers
-  .filter((member) => !member.data.alumni)
-  .sort((first, second) => first.data.order - second.data.order);
-const alumni = allMembers
-  .filter((member) => member.data.alumni)
-  .sort((first, second) => first.data.order - second.data.order);
+const team = await getEntry('members', 'team');
+if (!team) throw new Error('The team content entry is missing.');
+
+const { members, interns, alumni } = team.data;
 ---
 
 <Section id="miembros" titleEs="Miembros" titleEn="Members">
-  <div class="team-list">
-    {members.map((member) => <MemberCard member={member.data} />)}
-  </div>
+  <section aria-labelledby="members-heading">
+    <h3 class="team-subheading" id="members-heading" data-es="Integrantes" data-en="Team members">
+      Integrantes
+    </h3>
+    <div class="team-list">
+      {members.map((member) => <MemberCard member={member} />)}
+    </div>
+  </section>
+  <section class="interns-section" aria-labelledby="interns-heading">
+    <h3 class="team-subheading" id="interns-heading" data-es="Estudiantes Pasantes" data-en="Intern Students">
+      Estudiantes Pasantes
+    </h3>
+    {interns.length > 0 ? (
+      <div class="team-list">
+        {interns.map((member) => <MemberCard member={member} />)}
+      </div>
+    ) : (
+      <p class="empty-state" data-es="Todavía no hay estudiantes pasantes publicados." data-en="There are no intern students listed yet.">
+        Todavía no hay estudiantes pasantes publicados.
+      </p>
+    )}
+  </section>
   <section class="alumni-section" aria-labelledby="alumni-heading">
     <h3 class="team-subheading" id="alumni-heading" data-es="Exmiembros" data-en="Former members">
       Exmiembros
     </h3>
-    {alumni.length ? (
+    {alumni.length > 0 ? (
       <div class="team-list alumni-list">
-        {alumni.map((member) => <MemberCard member={member.data} />)}
+        {alumni.map((member) => <MemberCard member={member} />)}
       </div>
     ) : (
       <p class="empty-state" data-es="Todavía no hay exmiembros publicados." data-en="There are no former members listed yet.">

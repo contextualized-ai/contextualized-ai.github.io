@@ -1,18 +1,56 @@
 ---
 import Section from '../Section.astro';
-import TimelineItem from '../shared/TimelineItem.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import { parsePublications } from '../../lib/publication';
 
 const publications = (await getCollection('publications'))
   .flatMap((entry) => parsePublications(entry.data.bibtex))
   .sort((first, second) => Number(second.year) - Number(first.year));
+const years = [...new Set(publications.map((publication) => publication.year))]
+  .sort((first, second) => Number(second) - Number(first));
+const team = await getEntry('members', 'team');
+if (!team) throw new Error('The team content entry is missing.');
+
+function searchableAuthors(authors: string): string {
+  const normalize = (value: string) => value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase();
+  const citationAuthors = authors.split(',').map(normalize);
+  const knownAuthors = team.data.members
+    .filter((member) => {
+      const surname = normalize(member.name.trim().split(/\s+/).at(-1) ?? '');
+      return surname && citationAuthors.some((author) => author === surname || author.endsWith(` ${surname}`));
+    })
+    .map((member) => member.name);
+
+  return [...new Set([authors, ...knownAuthors])].join(' ');
+}
 ---
 
 <Section id="publicaciones" titleEs="Publicaciones" titleEn="Publications">
+  <div class="publication-filters">
+    <label class="publication-filter">
+      <span data-es="Filtrar por persona autora" data-en="Filter by author">Filtrar por persona autora</span>
+      <input id="publication-person" type="search" autocomplete="off" aria-describedby="publication-filter-hint" />
+      <span id="publication-filter-hint" class="filter-hint" data-es="Busca por nombre o apellido." data-en="Search by first or last name.">
+        Busca por nombre o apellido.
+      </span>
+    </label>
+    <label class="publication-filter">
+      <span data-es="Filtrar por año" data-en="Filter by year">Filtrar por año</span>
+      <select id="publication-year">
+        <option value="" data-es="Todos los años" data-en="All years">Todos los años</option>
+        {years.map((year) => <option value={year}>{year}</option>)}
+      </select>
+    </label>
+  </div>
   <ul class="timeline-list">
     {publications.map((publication) => (
-      <TimelineItem year={publication.year}>
+      <li
+        class="timeline-item publication-item"
+        data-publication-item
+        data-year={publication.year}
+        data-authors={searchableAuthors(publication.authors)}
+      >
+        <time class="item-year" datetime={publication.year}>{publication.year}</time>
         <div>
           <h3 class="publication-title">{publication.title}</h3>
           {publication.authors && <p class="item-meta">{publication.authors}</p>}
@@ -28,12 +66,25 @@ const publications = (await getCollection('publications'))
             >{publication.paperUrl.includes('arxiv.org') ? 'Ver en arXiv →' : 'Ver publicación →'}</a>
           )}
         </div>
-      </TimelineItem>
+      </li>
     ))}
   </ul>
+  <p
+    class="empty-state publication-empty-state"
+    data-publication-empty
+    data-es="No hay publicaciones que coincidan con esos filtros."
+    data-en="No publications match those filters."
+    hidden
+  >
+    No hay publicaciones que coincidan con esos filtros.
+  </p>
   {publications.length === 0 && (
     <p class="empty-state" data-es="Todavía no hay publicaciones." data-en="There are no publications yet.">
       Todavía no hay publicaciones.
     </p>
   )}
 </Section>
+
+<script>
+  import '../../scripts/publication-filters';
+</script>

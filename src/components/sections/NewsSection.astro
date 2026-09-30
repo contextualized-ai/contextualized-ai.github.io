@@ -1,6 +1,7 @@
 ---
 import Section from '../Section.astro';
 import TimelineItem from '../shared/TimelineItem.astro';
+import NewsCarousel from '../shared/NewsCarousel.astro';
 import { getCollection } from 'astro:content';
 
 const newsItems = (await getCollection('news'))
@@ -11,7 +12,10 @@ const newsItems = (await getCollection('news'))
   <ul class="timeline-list">
     {newsItems.map((item) => (
       <TimelineItem year={item.data.year}>
-        <span data-es={item.data.textEs} data-en={item.data.textEn}>{item.data.textEs}</span>
+        <div>
+          <p class="news-text" data-es={item.data.textEs} data-en={item.data.textEn}>{item.data.textEs}</p>
+          {item.data.images.length > 0 && <NewsCarousel images={item.data.images} />}
+        </div>
       </TimelineItem>
     ))}
   </ul>

@@ -1,0 +1,60 @@
+---
+interface Props {
+  images: {
+    image: string;
+    altEs: string;
+    altEn: string;
+  }[];
+}
+
+const { images } = Astro.props;
+---
+
+<section
+  class="news-carousel"
+  aria-label="Galería de fotos de la noticia"
+  data-aria-es="Galería de fotos de la noticia"
+  data-aria-en="News photo gallery"
+>
+  <div class="carousel-images" aria-live="off">
+    {images.map((image, index) => (
+      <img
+        class="carousel-image"
+        data-slide={index}
+        src={image.image}
+        alt={image.altEs}
+        data-alt-es={image.altEs}
+        data-alt-en={image.altEn}
+        loading="lazy"
+        width="1600"
+        height="1067"
+        aria-hidden={index === 0 ? undefined : 'true'}
+        class:list={{ 'is-active': index === 0 }}
+        hidden={index !== 0}
+      />
+    ))}
+  </div>
+  {images.length > 1 && (
+    <div class="carousel-controls">
+      <button
+        type="button"
+        data-carousel-previous
+        aria-label="Foto anterior"
+        data-aria-es="Foto anterior"
+        data-aria-en="Previous photo"
+      >←</button>
+      <span data-carousel-status aria-live="polite">1 / {images.length}</span>
+      <button
+        type="button"
+        data-carousel-next
+        aria-label="Foto siguiente"
+        data-aria-es="Foto siguiente"
+        data-aria-en="Next photo"
+      >→</button>
+    </div>
+  )}
+</section>
+
+<script>
+  import '../../scripts/carousel';
+</script>
