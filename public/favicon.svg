@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" fill="#1d1d1b" />
+  <rect width="128" height="128" fill="#6473fc" />
   <text
     x="64"
     y="86"
     fill="#fff"
-    font-family="Arial, sans-serif"
+    font-family="Syne, sans-serif"
     font-size="52"
-    font-weight="500"
+    font-weight="300"
     letter-spacing="-3"
     text-anchor="middle"
   >C-AI</text>
