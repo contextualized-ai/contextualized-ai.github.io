@@ -40,6 +40,7 @@ function searchableAuthors(authors: string): string {
         <option value="" data-es="Todos los años" data-en="All years">Todos los años</option>
         {years.map((year) => <option value={year}>{year}</option>)}
       </select>
+      <span class="filter-hint filter-hint-spacer" aria-hidden="true">&nbsp;</span>
     </label>
   </div>
   <ul class="timeline-list">

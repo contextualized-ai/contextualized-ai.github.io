@@ -284,6 +284,10 @@ html[lang="en"] .content-body[data-lang="en"] { display: block; }
   font: inherit;
 }
 .filter-hint { color: var(--muted); font-size: 0.8rem; }
+.filter-hint-spacer {
+  visibility: hidden;
+  pointer-events: none;
+}
 .publication-item.is-filtered-out { display: none; }
 .publication-empty-state { margin-top: 1rem; }
 .team-list {

@@ -9,7 +9,7 @@ if (!about || !about.body) {
 }
 const rawContent = about.body;
 
-// Separar contenido español del inglés usando el divisor "---"
+// español separa al inglés con "---"
 const [esContent, enContent] = rawContent.split('---').map(text => text.trim());
 
 import { marked } from 'marked';

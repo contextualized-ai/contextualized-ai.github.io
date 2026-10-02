@@ -83,12 +83,14 @@ interns:
     roleEn: Intern student
     focusEs: ""
     focusEn: ""
+    link: "https://7c0h.com/"
   - order: 3
     name: David Racca
     roleEs: Estudiante pasante
     roleEn: Intern student
     focusEs: ""
     focusEn: ""
+    link: "https://www.linkedin.com/in/racca/?isSelfProfile=false"
 alumni:
   - order: 1
     name: Valentin Basel
@@ -96,6 +98,7 @@ alumni:
     roleEn: PhD graduate
     focusEs: ""
     focusEn: ""
+    link: "https://www.linkedin.com/in/valentin-basel-927a4736/?isSelfProfile=false"
   - order: 2
     name: Mauricio
     roleEs: Doctor recibido
