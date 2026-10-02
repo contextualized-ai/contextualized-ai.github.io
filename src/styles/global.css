@@ -3,21 +3,25 @@
   font-family: "Syne", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #1d1d1b;
+  --text-color: #3e3e3e;
+  --ink: var(--text-color);
   --muted: #777771;
   --line: #e8e7e3;
   --paper: #fbfbfa;
   --card: #f0f0ee;
   --blue: #2766ed;
+  --brand: #6473fc;
+  --highlight: #6473fc;
   --gutter: clamp(1.5rem, 8.5vw, 8.5rem);
 }
-
+/* f23f5a */
+/* ff3f18 */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--paper);
-  color: #000;
+  color: var(--text-color);
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -50,7 +54,7 @@ a:focus-visible, button:focus-visible {
   display: inline-block;
   width: 12.4rem;
   padding: 0 0.28em;
-  background: var(--ink);
+  background: var(--brand);
   color: #ffffff;
   font-size: 2.6rem;
   font-weight: 300;
@@ -73,7 +77,7 @@ a:focus-visible, button:focus-visible {
 .primary-nav a:hover, .primary-nav a:focus-visible {
   padding-right: 0.55rem;
   padding-left: 0.55rem;
-  background: #000;
+  background: var(--highlight);
   color: #fff;
 }
 .header-actions { display: contents; }
@@ -95,8 +99,8 @@ a:focus-visible, button:focus-visible {
 }
 .globe { width: 1.35rem; height: 1.35rem; }
 .locale-toggle:hover, .locale-toggle:focus-visible {
-  border-color: #000;
-  background: #000;
+  border-color: var(--highlight);
+  background: var(--highlight);
   color: #fff;
 }
 .menu-toggle { display: none; }
@@ -142,7 +146,7 @@ main {
 .intro {
   max-width: 48rem;
   margin: 0;
-  color: #30302c;
+  color: var(--text-color);
   font-size: clamp(1.15rem, 2vw, 1.45rem);
   line-height: 1.35;
   letter-spacing: -0.025em;
@@ -150,6 +154,10 @@ main {
 .content-body[data-lang="en"] { display: none; }
 html[lang="en"] .content-body[data-lang="es"] { display: none; }
 html[lang="en"] .content-body[data-lang="en"] { display: block; }
+.about-content {
+  padding: 1.25rem;
+  background: var(--card);
+}
 .content-body h2,
 .content-body h3 {
   font-family: "Syne", sans-serif;
@@ -316,12 +324,17 @@ html[lang="en"] .content-body[data-lang="en"] { display: block; }
 }
 .alumni-section > .empty-state { margin: 0; }
 .member-link {
-  color: #365cba;
+  color: var(--highlight);
   font-size: 0.9rem;
+  text-decoration: none;
 }
-.member-link:hover, .member-link:focus-visible,
+.member-link:hover,
+.member-link:focus-visible {
+  background: var(--highlight);
+  color: #fff;
+}
 .brand:hover, .brand:focus-visible {
-  background: #000;
+  background: var(--highlight);
   color: #fff;
 }
 .menu-toggle:hover, .menu-toggle:focus-visible {

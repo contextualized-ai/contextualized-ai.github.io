@@ -77,6 +77,7 @@ interns:
     roleEn: Intern student
     focusEs: ""
     focusEn: ""
+    link: "https://www.linkedin.com/in/lucia-gonzalez-75276617a/?isSelfProfile=false"
   - order: 2
     name: Martin Villalba
     roleEs: Estudiante pasante

@@ -11,10 +11,12 @@ const years = [...new Set(publications.map((publication) => publication.year))]
 const team = await getEntry('members', 'team');
 if (!team) throw new Error('The team content entry is missing.');
 
+const teamMembers = team.data.members;
+
 function searchableAuthors(authors: string): string {
   const normalize = (value: string) => value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase();
   const citationAuthors = authors.split(',').map(normalize);
-  const knownAuthors = team.data.members
+  const knownAuthors = teamMembers
     .filter((member) => {
       const surname = normalize(member.name.trim().split(/\s+/).at(-1) ?? '');
       return surname && citationAuthors.some((author) => author === surname || author.endsWith(` ${surname}`));
