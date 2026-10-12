@@ -1,2 +1,21 @@
+# Dependencias
 node_modules/
+
+# Directorios de compilación y generados
 dist/
+.astro/
+
+# Variables de entorno (¡CRÍTICO para seguridad!)
+.env
+.env.*
+!.env.example
+
+# Archivos del sistema operativo (macOS/Windows)
+.DS_Store
+Thumbs.db
+
+# Logs de gestores de paquetes
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
