@@ -82,26 +82,20 @@ investigadoresDoctoradosFormados:
     focusEn: ""
     link: "https://eisenjulian.github.io/index.html"
   - order: 4
-    name: Martin Villalba
-    roleEs: ""
-    roleEn: ""
-    focusEs: ""
-    focusEn: ""
-  - order: 5
     name: Valentin Basel
     roleEs: ""
     roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/valentin-basel-927a4736/?isSelfProfile=false"
-  - order: 6
+  - order: 5
     name: Mauricio Mazuecos
     roleEs: ""
     roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/mmazuecos/?isSelfProfile=false"
-  - order: 7
+  - order: 6
     name: Marco Moresi
     roleEs: ""
     roleEn: ""
