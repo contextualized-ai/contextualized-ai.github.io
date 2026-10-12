@@ -1,115 +1,111 @@
 ---
-members:
+directora:
   - order: 1
     name: Luciana Benotti
-    roleEs: Directora
-    roleEn: Director
+    roleEs: ""
+    roleEn: ""
     focusEs: Ética en NLP, Sistemas de Diálogo
     focusEn: Ethics in NLP, dialogue systems
     link: "https://cs.famaf.unc.edu.ar/~luciana/"
-  - order: 2
+investigadoresDocentesResponsables:
+  - order: 1
     name: Marcos J Gómez
-    roleEs: Profesor Adjunto
-    roleEn: Adjunct Professor
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/marcos-javier-g%C3%B3mez-ab6a9122/?isSelfProfile=false"
-  - order: 3
+  - order: 2
     name: Romina Altamirano
-    roleEs: Profesora Adjunta
-    roleEn: Adjunct Professor
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/i-romina-altamirano-a1b1582a2/?isSelfProfile=false"
-  - order: 4
-    name: Guido Ivetta
-    roleEs: Doctorando / Profesor Asistente
-    roleEn: PhD Student / Teaching Assistant
-    focusEs: Detección y mitigación de sesgos en LLMs
-    focusEn: Bias detection and mitigation in LLMs
-    link: "https://www.linkedin.com/in/guidoivetta/?isSelfProfile=false"
-  - order: 5
-    name: Sofía Martinelli
-    roleEs: Doctoranda
-    roleEn: PhD Student
-    focusEs: ""
-    focusEn: ""
-    link: "https://www.linkedin.com/in/sofiamartinelli/?isSelfProfile=false"
-  - order: 6
-    name: Hernán Maina
-    roleEs: Becario Doctoral
-    roleEn: PhD Fellow
-    focusEs: ""
-    focusEn: ""
-    link: "https://nanom.github.io/"
-  - order: 7
-    name: Julian Eisenchlos
-    roleEs: Doctorando
-    roleEn: PhD Student
-    focusEs: ""
-    focusEn: ""
-    link: "https://eisenjulian.github.io/index.html"
-  - order: 8
-    name: Lourdes Aguiar Cau
-    roleEs: Doctoranda en Educación
-    roleEn: PhD Student in Education
-    focusEs: ""
-    focusEn: ""
-    link: "https://bicyt.conicet.gov.ar/fichas/p/lourdes-aguiar-cau"
-  - order: 9
+investigadoraConicet:
+  - order: 1
     name: Emilia Echeveste
-    roleEs: Becaria Post-doctoral
-    roleEn: Postdoctoral Fellow
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/emilia-echeveste-566437302/?isSelfProfile=false"
-  - order: 10
+doctorandos:
+  - order: 1
+    name: Guido Ivetta
+    roleEs: ""
+    roleEn: ""
+    focusEs: Detección y mitigación de sesgos en LLMs
+    focusEn: Bias detection and mitigation in LLMs
+    link: "https://www.linkedin.com/in/guidoivetta/?isSelfProfile=false"
+  - order: 2
+    name: Sofía Martinelli
+    roleEs: ""
+    roleEn: ""
+    focusEs: ""
+    focusEn: ""
+    link: "https://www.linkedin.com/in/sofiamartinelli/?isSelfProfile=false"
+  - order: 3
     name: Daniel Taborda
-    roleEs: Investigador
-    roleEn: Researcher
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/daniel-taborda-877867262/?isSelfProfile=false"
-interns:
+  - order: 4
+    name: Lourdes Aguiar Cau
+    roleEs: ""
+    roleEn: ""
+    focusEs: ""
+    focusEn: ""
+    link: "https://bicyt.conicet.gov.ar/fichas/p/lourdes-aguiar-cau"
+investigadoresDoctoradosFormados:
   - order: 1
-    name: Lucia Gonzalez
-    roleEs: Estudiante pasante
-    roleEn: Intern student
+    name: Hernán Maina
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
-    link: "https://www.linkedin.com/in/lucia-gonzalez-75276617a/?isSelfProfile=false"
+    link: "https://nanom.github.io/"
   - order: 2
-    name: Martin Villalba
-    roleEs: Estudiante pasante
-    roleEn: Intern student
-    focusEs: ""
-    focusEn: ""
-    link: "https://7c0h.com/"
-  - order: 3
     name: David Racca
-    roleEs: Estudiante pasante
-    roleEn: Intern student
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/racca/?isSelfProfile=false"
-alumni:
-  - order: 1
+  - order: 3
+    name: Julian Eisenchlos
+    roleEs: ""
+    roleEn: ""
+    focusEs: ""
+    focusEn: ""
+    link: "https://eisenjulian.github.io/index.html"
+  - order: 4
+    name: Martin Villalba
+    roleEs: ""
+    roleEn: ""
+    focusEs: ""
+    focusEn: ""
+  - order: 5
     name: Valentin Basel
-    roleEs: Doctor recibido
-    roleEn: PhD graduate
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
     link: "https://www.linkedin.com/in/valentin-basel-927a4736/?isSelfProfile=false"
-  - order: 2
-    name: Mauricio
-    roleEs: Doctor recibido
-    roleEn: PhD graduate
+  - order: 6
+    name: Mauricio Mazuecos
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
-  - order: 3
-    name: Sasha
-    roleEs: Magíster recibida
-    roleEn: Master's graduate
+    link: "https://www.linkedin.com/in/mmazuecos/?isSelfProfile=false"
+  - order: 7
+    name: Marco Moresi
+    roleEs: ""
+    roleEn: ""
     focusEs: ""
     focusEn: ""
+    link: "https://www.linkedin.com/in/marco-moresi-a15316a/?isSelfProfile=false"
 ---

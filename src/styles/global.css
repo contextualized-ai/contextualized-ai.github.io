@@ -316,7 +316,7 @@ html[lang="en"] .content-body[data-lang="en"] { display: block; }
 }
 .member-role { margin: 0 0 0.55rem; color: var(--muted); font-size: 0.82rem; }
 .member-focus { margin: 0 0 0.5rem; font-size: 0.93rem; }
-.interns-section, .alumni-section { margin-top: 3rem; }
+.team-group { margin-top: 2.5rem; }
 .team-subheading {
   margin: 0 0 1.25rem;
   font-size: 1.2rem;

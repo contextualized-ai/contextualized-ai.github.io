@@ -6,43 +6,81 @@ import { getEntry } from 'astro:content';
 const team = await getEntry('members', 'team');
 if (!team) throw new Error('The team content entry is missing.');
 
-const { members, interns, alumni } = team.data;
+const {
+  directora,
+  investigadoresDocentesResponsables,
+  investigadoraConicet,
+  doctorandos,
+  investigadoresDoctoradosFormados,
+} = team.data;
 ---
 
 <Section id="miembros" titleEs="Miembros" titleEn="Members">
-  <section aria-labelledby="members-heading">
-    <h3 class="team-subheading" id="members-heading" data-es="Integrantes" data-en="Team members">
-      Integrantes
+  <section class="team-group" aria-labelledby="directora-heading">
+    <h3 class="team-subheading" id="directora-heading" data-es="Directora" data-en="Director">
+      Directora
     </h3>
     <div class="team-list">
-      {members.map((member) => <MemberCard member={member} />)}
+      {directora.map((member) => <MemberCard member={member} />)}
     </div>
   </section>
-  <section class="interns-section" aria-labelledby="interns-heading">
-    <h3 class="team-subheading" id="interns-heading" data-es="Estudiantes Pasantes" data-en="Intern Students">
-      Estudiantes Pasantes
+
+  <section class="team-group" aria-labelledby="investigadores-docentes-heading">
+    <h3 class="team-subheading" id="investigadores-docentes-heading" data-es="Investigadores docentes responsables" data-en="Responsible teaching researchers">
+      Investigadores docentes responsables
     </h3>
-    {interns.length > 0 ? (
+    {investigadoresDocentesResponsables.length > 0 ? (
       <div class="team-list">
-        {interns.map((member) => <MemberCard member={member} />)}
+        {investigadoresDocentesResponsables.map((member) => <MemberCard member={member} />)}
       </div>
     ) : (
-      <p class="empty-state" data-es="Todavía no hay estudiantes pasantes publicados." data-en="There are no intern students listed yet.">
-        Todavía no hay estudiantes pasantes publicados.
+      <p class="empty-state" data-es="Todavía no hay investigadores docentes responsables." data-en="There are no responsible teaching researchers listed yet.">
+        Todavía no hay investigadores docentes responsables.
       </p>
     )}
   </section>
-  <section class="alumni-section" aria-labelledby="alumni-heading">
-    <h3 class="team-subheading" id="alumni-heading" data-es="Exmiembros" data-en="Former members">
-      Exmiembros
+
+  <section class="team-group" aria-labelledby="investigadora-conicet-heading">
+    <h3 class="team-subheading" id="investigadora-conicet-heading" data-es="Investigadora CONICET" data-en="CONICET researcher">
+      Investigadora CONICET
     </h3>
-    {alumni.length > 0 ? (
-      <div class="team-list alumni-list">
-        {alumni.map((member) => <MemberCard member={member} />)}
+    {investigadoraConicet.length > 0 ? (
+      <div class="team-list">
+        {investigadoraConicet.map((member) => <MemberCard member={member} />)}
       </div>
     ) : (
-      <p class="empty-state" data-es="Todavía no hay exmiembros publicados." data-en="There are no former members listed yet.">
-        Todavía no hay exmiembros publicados.
+      <p class="empty-state" data-es="Todavía no hay investigadora CONICET publicada." data-en="There are no CONICET researchers listed yet.">
+        Todavía no hay investigadora CONICET publicada.
+      </p>
+    )}
+  </section>
+
+  <section class="team-group" aria-labelledby="doctorandos-heading">
+    <h3 class="team-subheading" id="doctorandos-heading" data-es="Doctorandos" data-en="PhD students">
+      Doctorandos
+    </h3>
+    {doctorandos.length > 0 ? (
+      <div class="team-list">
+        {doctorandos.map((member) => <MemberCard member={member} />)}
+      </div>
+    ) : (
+      <p class="empty-state" data-es="Todavía no hay doctorandos publicados." data-en="There are no PhD students listed yet.">
+        Todavía no hay doctorandos publicados.
+      </p>
+    )}
+  </section>
+
+  <section class="team-group" aria-labelledby="doctorados-formados-heading">
+    <h3 class="team-subheading" id="doctorados-formados-heading" data-es="Investigadores doctorados formados en el equipo" data-en="Researchers with doctorates formed in the team">
+      Investigadores doctorados formados en el equipo
+    </h3>
+    {investigadoresDoctoradosFormados.length > 0 ? (
+      <div class="team-list alumni-list">
+        {investigadoresDoctoradosFormados.map((member) => <MemberCard member={member} />)}
+      </div>
+    ) : (
+      <p class="empty-state" data-es="Todavía no hay investigadores doctorados formados en el equipo." data-en="There are no researchers with doctorates formed in the team yet.">
+        Todavía no hay investigadores doctorados formados en el equipo.
       </p>
     )}
   </section>

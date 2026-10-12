@@ -2,7 +2,8 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "members": {
+    "directora": {
+      "default": [],
       "type": "array",
       "items": {
         "type": "object",
@@ -42,7 +43,8 @@
         ]
       }
     },
-    "interns": {
+    "investigadoresDocentesResponsables": {
+      "default": [],
       "type": "array",
       "items": {
         "type": "object",
@@ -82,7 +84,90 @@
         ]
       }
     },
-    "alumni": {
+    "investigadoraConicet": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "name": {
+            "type": "string"
+          },
+          "roleEs": {
+            "type": "string"
+          },
+          "roleEn": {
+            "type": "string"
+          },
+          "focusEs": {
+            "type": "string"
+          },
+          "focusEn": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "order",
+          "name",
+          "roleEs",
+          "roleEn",
+          "focusEs",
+          "focusEn"
+        ]
+      }
+    },
+    "doctorandos": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "name": {
+            "type": "string"
+          },
+          "roleEs": {
+            "type": "string"
+          },
+          "roleEn": {
+            "type": "string"
+          },
+          "focusEs": {
+            "type": "string"
+          },
+          "focusEn": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "order",
+          "name",
+          "roleEs",
+          "roleEn",
+          "focusEs",
+          "focusEn"
+        ]
+      }
+    },
+    "investigadoresDoctoradosFormados": {
+      "default": [],
       "type": "array",
       "items": {
         "type": "object",
@@ -125,10 +210,5 @@
     "$schema": {
       "type": "string"
     }
-  },
-  "required": [
-    "members",
-    "interns",
-    "alumni"
-  ]
+  }
 }

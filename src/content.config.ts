@@ -52,9 +52,11 @@ const memberSchema = z.object({
 const members = defineCollection({
   loader: glob({ pattern: 'team.md', base: './src/content/members' }),
   schema: z.object({
-    members: z.array(memberSchema),
-    interns: z.array(memberSchema),
-    alumni: z.array(memberSchema),
+    directora: z.array(memberSchema).default([]),
+    investigadoresDocentesResponsables: z.array(memberSchema).default([]),
+    investigadoraConicet: z.array(memberSchema).default([]),
+    doctorandos: z.array(memberSchema).default([]),
+    investigadoresDoctoradosFormados: z.array(memberSchema).default([]),
   }),
 });
 
