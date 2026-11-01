@@ -32,7 +32,7 @@ a:focus-visible, button:focus-visible {
   inset: 0 0 auto;
   z-index: 2;
   width: 100%;
-  padding: clamp(2rem, 5vw, 4rem) 0;
+  padding: clamp(1.25rem, 3.5vw, 2.25rem) 0;
   background: var(--paper);
 }
 .header-top {
@@ -86,7 +86,7 @@ a:focus-visible, button:focus-visible {
 main {
   width: min(100% - 2 * var(--gutter), 70rem);
   margin: 0 auto;
-  padding: clamp(12rem, 20vw, 16rem) 0 4rem;
+  padding: clamp(7.5rem, 12vw, 9.5rem) 0 2.5rem;
 }
 .page-content { max-width: 55rem; }
 
@@ -100,13 +100,23 @@ h1 {
 }
 
 .content-section {
-  margin-top: 4rem;
-  padding-top: 1.25rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--line);
   scroll-margin-top: 2rem;
 }
-h2 { margin: 0 0 1.4rem; font-size: 1.55rem; font-weight: 400; }
-h3 { margin: 0 0 0.35rem; font-size: 1.05rem; font-weight: 500; line-height: 1.35; }
+h2 { margin: 0 0 0.85rem; font-size: 1.45rem; font-weight: 400; }
+h3 { margin: 0 0 0.25rem; font-size: 1.02rem; font-weight: 500; line-height: 1.35; }
+.section-affiliation { margin: 0 0 0.75rem; }
+.section-affiliation a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.section-affiliation a:hover,
+.section-affiliation a:focus-visible {
+  color: var(--text);
+}
 .placeholder-note, .edit-hint { max-width: 42rem; color: var(--muted); }
 .research-grid {
   display: grid;
@@ -114,8 +124,8 @@ h3 { margin: 0 0 0.35rem; font-size: 1.05rem; font-weight: 500; line-height: 1.3
   gap: 0;
 }
 .team-heading {
-  margin: 1.75rem 0 0.85rem;
-  font-size: 1.15rem;
+  margin: 1.25rem 0 0.6rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--muted);
 }
@@ -123,19 +133,19 @@ h3 { margin: 0 0 0.35rem; font-size: 1.05rem; font-weight: 500; line-height: 1.3
   margin-top: 0;
 }
 .team-heading-past {
-  margin-top: 2.75rem;
+  margin-top: 1.6rem;
 }
-.team-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.team-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
 .research-card {
   min-width: 0;
-  padding: 1.25rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid var(--line);
 }
 .research-card:last-child { border-bottom: 0; }
 .research-card p { max-width: 52rem; margin: 0; font-size: 0.94rem; }
 .research-card a {
   display: inline-block;
-  margin-top: 0.6rem;
+  margin-top: 0.45rem;
   color: var(--brand);
   font-size: 0.92rem;
   text-underline-offset: 0.18em;
@@ -143,9 +153,8 @@ h3 { margin: 0 0 0.35rem; font-size: 1.05rem; font-weight: 500; line-height: 1.3
 .research-card a:hover, .research-card a:focus-visible {
   color: var(--text);
 }
-.member-card { min-width: 0; padding: 1.25rem; background: var(--card); }
-.member-card h3 a { text-decoration-color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
-.member-card h3 a:hover, .member-card h3 a:focus-visible { color: var(--brand); }
+.member-card { min-width: 0; padding: 0.8rem 1rem; background: var(--card); }
+.member-card h3 { margin: 0 0 0.15rem; font-size: 1.05rem; }
 .member-role { margin: 0; color: var(--muted); font-size: 0.86rem; }
 .member-role a {
   text-decoration: underline;
@@ -157,19 +166,42 @@ h3 { margin: 0 0 0.35rem; font-size: 1.05rem; font-weight: 500; line-height: 1.3
   color: var(--brand);
   text-decoration-color: var(--brand);
 }
+.member-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+}
+.member-links a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.member-links a:hover,
+.member-links a:focus-visible {
+  color: var(--text);
+}
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+.member-role a:hover, .member-role a:focus-visible {
+  color: var(--brand);
+  text-decoration-color: var(--brand);
+}
 .member-focus { margin: 0.55rem 0 0; font-size: 0.92rem; }
 .dataset-link {
   display: inline-block;
   margin-top: 0.75rem;
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 0.95rem;
   background: var(--brand);
   color: #fff;
   text-decoration: none;
 }
 .dataset-link:hover, .dataset-link:focus-visible { background: var(--text); color: #fff; }
 footer {
-  margin-top: 4rem;
-  padding-top: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.78rem;
@@ -184,9 +216,9 @@ footer {
   .brand-mark { width: 8.5rem; font-size: 1.8rem; }
   .brand-name { max-width: 8.5rem; padding: 0.2rem 0.1rem 0; font-size: 0.68rem; }
   .language-button { min-width: 2.4rem; min-height: 2.4rem; }
-  main { width: auto; margin: 0; padding: 8rem 1.15rem 3rem; }
+  main { width: auto; margin: 0; padding: 5.5rem 1.15rem 2rem; }
   .hero { margin-bottom: 3.5rem; }
-  .content-section { margin-top: 3rem; }
+  .content-section { margin-top: 2rem; }
   .team-list { grid-template-columns: 1fr; }
 }
 
